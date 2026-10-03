@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Analytics Warehouse - Executive KPI Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Header -->
+        <header class="header">
+            <div class="brand">
+                <div class="logo-icon">📊</div>
+                <div>
+                    <h1>Operations Analytics Warehouse</h1>
+                    <p class="subtitle">Service Operations & SLA Performance Dashboard</p>
+                </div>
+            </div>
+            <div class="header-actions">
+                <div class="badge live-badge">● LIVE DATAWAREHOUSE</div>
+                <button class="btn btn-secondary" onclick="exportKpiData()">Export KPI Data</button>
+                <button class="btn btn-primary" onclick="refreshDashboard()">Refresh Metrics</button>
+            </div>
+        </header>
+
+        <!-- Global Filter Bar -->
+        <section class="filter-bar">
+            <div class="filter-group">
+                <label for="dept-filter">Department</label>
+                <select id="dept-filter" onchange="applyFilters()">
+                    <option value="ALL">All Departments</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="category-filter">Category</label>
+                <select id="category-filter" onchange="applyFilters()">
+                    <option value="ALL">All Categories</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="district-filter">District / Region</label>
+                <select id="district-filter" onchange="applyFilters()">
+                    <option value="ALL">All Districts</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="priority-filter">Priority</label>
+                <select id="priority-filter" onchange="applyFilters()">
+                    <option value="ALL">All Priorities</option>
+                    <option value="Critical">Critical</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <div class="filter-summary" id="filter-summary">Showing 5,000 Total Incidents</div>
+        </section>
+
+        <!-- KPI Executive Summary Cards -->
+        <section class="kpi-grid">
+            <div class="kpi-card purple">
+                <div class="kpi-header">
+                    <span>Total Incidents</span>
+                    <span class="kpi-icon">📋</span>
+                </div>
+                <div class="kpi-value" id="kpi-total">5,000</div>
+                <div class="kpi-subtext" id="kpi-closed-sub">4,250 Resolved (85.0%)</div>
+            </div>
+            <div class="kpi-card cyan">
+                <div class="kpi-header">
+                    <span>Avg Resolution Time</span>
+                    <span class="kpi-icon">⏱️</span>
+                </div>
+                <div class="kpi-value" id="kpi-avg-time">28.4 <span class="unit">hrs</span></div>
+                <div class="kpi-subtext">Target Benchmark: &lt; 36.0 hrs</div>
+            </div>
+            <div class="kpi-card emerald">
+                <div class="kpi-header">
+                    <span>SLA Compliance</span>
+                    <span class="kpi-icon">🛡️</span>
+                </div>
+                <div class="kpi-value" id="kpi-sla-rate">81.5%</div>
+                <div class="kpi-subtext" id="kpi-sla-breach-sub">786 SLA Breaches</div>
+            </div>
+            <div class="kpi-card amber">
+                <div class="kpi-header">
+                    <span>Active Open Backlog</span>
+                    <span class="kpi-icon">📂</span>
+                </div>
+                <div class="kpi-value" id="kpi-backlog">750</div>
+                <div class="kpi-subtext">Pending Resolution</div>
+            </div>
+            <div class="kpi-card rose">
+                <div class="kpi-header">
+                    <span>Repeat Incident Rate</span>
+                    <span class="kpi-icon">🔁</span>
+                </div>
+                <div class="kpi-value" id="kpi-repeat-rate">12.3%</div>
+                <div class="kpi-subtext">615 Repeat Requests</div>
+            </div>
+        </div>
+
+        <!-- Dashboard Visual Charts Grid -->
+        <section class="charts-grid">
+            <!-- Monthly Trends & SLA Breaches -->
+            <div class="chart-card span-2">
+                <div class="chart-header">
+                    <h3>Monthly Ticket Volume & MoM Growth Trends</h3>
+                    <div class="chart-badge">DW View: marts.vw_kpi_monthly_trends</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="monthlyTrendChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Department Workload & Performance -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Department Workload & Resolution Speed</h3>
+                    <div class="chart-badge">DW View: marts.vw_kpi_department_performance</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="deptWorkloadChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Category Breakdown -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Category Share & Breach Rate</h3>
+                    <div class="chart-badge">DW View: marts.vw_kpi_category_breakdown</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Geographic Distribution -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Geographic District Volume</h3>
+                    <div class="chart-badge">DW View: marts.vw_kpi_geographic_distribution</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="geoChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Backlog Aging Matrix -->
+            <div class="chart-card">
+                <div class="chart-header">
+                    <h3>Backlog Aging Matrix (Open Tickets)</h3>
+                    <div class="chart-badge">DW View: marts.vw_kpi_backlog_aging</div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="backlogAgingChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Definitions & Power BI Integration Drawer -->
+        <section class="info-section">
+            <div class="info-card">
+                <h3>💡 Data Analyst Portfolio Summary & Resume Bullet Points</h3>
+                <div class="bullet-box">
+                    <p><strong>Star Schema Architecture:</strong> Star schema modeled on PostgreSQL (1 Fact: <code>fact_service_requests</code>, 5 Dimensions: <code>dim_date</code>, <code>dim_location</code>, <code>dim_request_type</code>, <code>dim_department</code>, <code>dim_status</code>).</p>
+                    <p><strong>Resume Bullet #1:</strong> Designed a PostgreSQL star-schema analytics warehouse for operational service data, using Python ETL and SQL window functions to produce reusable KPI datasets for backlog, resolution time, workload, and trend analysis.</p>
+                    <p><strong>Resume Bullet #2:</strong> Built an interactive Power BI / Web Dashboard with drill-down filters and documented KPI definitions to translate 5,000+ operational incidents into actionable performance insights.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Operations Analytics Warehouse • Powered by PostgreSQL 16 + Python ETL + Chart.js</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

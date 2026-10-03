@@ -1,0 +1,370 @@
+{
+  "overview": {
+    "total_requests": 5000,
+    "total_closed_requests": 4794,
+    "current_backlog": 206,
+    "avg_resolution_hours": 46.59,
+    "avg_satisfaction_rating": 3.92,
+    "total_sla_breaches": 972,
+    "sla_compliance_pct": 79.72,
+    "total_repeat_incidents": 575,
+    "repeat_incident_pct": 11.5
+  },
+  "departments": [
+    {
+      "department_name": "Parks & Recreation",
+      "division_name": "Tree Maintenance & Grounds",
+      "total_tickets": 826,
+      "avg_resolution_hours": 48.34,
+      "sla_breach_count": 170,
+      "avg_satisfaction": 3.9169811320754717,
+      "sla_compliance_pct": 79.42
+    },
+    {
+      "department_name": "Public Safety",
+      "division_name": "Code Enforcement",
+      "total_tickets": 852,
+      "avg_resolution_hours": 58.57,
+      "sla_breach_count": 162,
+      "avg_satisfaction": 3.9330085261875762,
+      "sla_compliance_pct": 80.99
+    },
+    {
+      "department_name": "Public Works",
+      "division_name": "Roads & Infrastructure",
+      "total_tickets": 827,
+      "avg_resolution_hours": 48.84,
+      "sla_breach_count": 157,
+      "avg_satisfaction": 3.919496855345912,
+      "sla_compliance_pct": 81.02
+    },
+    {
+      "department_name": "Public Works",
+      "division_name": "Sanitation & Waste",
+      "total_tickets": 828,
+      "avg_resolution_hours": 30.13,
+      "sla_breach_count": 166,
+      "avg_satisfaction": 3.872935196950445,
+      "sla_compliance_pct": 79.95
+    },
+    {
+      "department_name": "Transportation",
+      "division_name": "Traffic Signals & Transit",
+      "total_tickets": 843,
+      "avg_resolution_hours": 72.14,
+      "sla_breach_count": 167,
+      "avg_satisfaction": 3.89480198019802,
+      "sla_compliance_pct": 80.19
+    },
+    {
+      "department_name": "Water & Utilities",
+      "division_name": "Water Main Maintenance",
+      "total_tickets": 824,
+      "avg_resolution_hours": 20.33,
+      "sla_breach_count": 150,
+      "avg_satisfaction": 3.9746192893401013,
+      "sla_compliance_pct": 81.8
+    }
+  ],
+  "monthly_trends": [
+    {
+      "year": 2025,
+      "month": 10,
+      "month_name": "October",
+      "ticket_volume": 378,
+      "sla_breaches": 82,
+      "avg_resolution_hours": 47.15,
+      "year_month": "2025-10"
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "month_name": "November",
+      "ticket_volume": 430,
+      "sla_breaches": 78,
+      "avg_resolution_hours": 46.31,
+      "year_month": "2025-11"
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "month_name": "December",
+      "ticket_volume": 403,
+      "sla_breaches": 88,
+      "avg_resolution_hours": 51.63,
+      "year_month": "2025-12"
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "month_name": "January",
+      "ticket_volume": 410,
+      "sla_breaches": 88,
+      "avg_resolution_hours": 50.99,
+      "year_month": "2026-01"
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "month_name": "February",
+      "ticket_volume": 400,
+      "sla_breaches": 68,
+      "avg_resolution_hours": 48.29,
+      "year_month": "2026-02"
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "month_name": "March",
+      "ticket_volume": 442,
+      "sla_breaches": 82,
+      "avg_resolution_hours": 46.76,
+      "year_month": "2026-03"
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "month_name": "April",
+      "ticket_volume": 416,
+      "sla_breaches": 80,
+      "avg_resolution_hours": 44.85,
+      "year_month": "2026-04"
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "month_name": "May",
+      "ticket_volume": 482,
+      "sla_breaches": 106,
+      "avg_resolution_hours": 45.71,
+      "year_month": "2026-05"
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "month_name": "June",
+      "ticket_volume": 394,
+      "sla_breaches": 72,
+      "avg_resolution_hours": 43.92,
+      "year_month": "2026-06"
+    },
+    {
+      "year": 2026,
+      "month": 7,
+      "month_name": "July",
+      "ticket_volume": 428,
+      "sla_breaches": 86,
+      "avg_resolution_hours": 41.74,
+      "year_month": "2026-07"
+    },
+    {
+      "year": 2026,
+      "month": 8,
+      "month_name": "August",
+      "ticket_volume": 396,
+      "sla_breaches": 79,
+      "avg_resolution_hours": 48.16,
+      "year_month": "2026-08"
+    },
+    {
+      "year": 2026,
+      "month": 9,
+      "month_name": "September",
+      "ticket_volume": 388,
+      "sla_breaches": 63,
+      "avg_resolution_hours": 44.16,
+      "year_month": "2026-09"
+    },
+    {
+      "year": 2026,
+      "month": 10,
+      "month_name": "October",
+      "ticket_volume": 33,
+      "sla_breaches": 0,
+      "avg_resolution_hours": 31.87,
+      "year_month": "2026-10"
+    }
+  ],
+  "geo_distribution": [
+    {
+      "district_code": "DIST-04",
+      "neighborhood": "East Park Industrial",
+      "region_zone": "South Region",
+      "total_requests": 1047,
+      "sla_breaches": 194,
+      "avg_resolution_hours": 43.17
+    },
+    {
+      "district_code": "DIST-03",
+      "neighborhood": "University Hills",
+      "region_zone": "South Region",
+      "total_requests": 1030,
+      "sla_breaches": 209,
+      "avg_resolution_hours": 46.99
+    },
+    {
+      "district_code": "DIST-02",
+      "neighborhood": "Northside Heights",
+      "region_zone": "North Region",
+      "total_requests": 1002,
+      "sla_breaches": 193,
+      "avg_resolution_hours": 45.57
+    },
+    {
+      "district_code": "DIST-01",
+      "neighborhood": "Downtown Metro",
+      "region_zone": "North Region",
+      "total_requests": 978,
+      "sla_breaches": 188,
+      "avg_resolution_hours": 48.31
+    },
+    {
+      "district_code": "DIST-05",
+      "neighborhood": "West End Suburbs",
+      "region_zone": "South Region",
+      "total_requests": 943,
+      "sla_breaches": 188,
+      "avg_resolution_hours": 49.35
+    }
+  ],
+  "categories": [
+    {
+      "request_category": "Code Enforcement",
+      "request_type_name": "Noise Violation",
+      "priority_level": "Medium",
+      "request_count": 437,
+      "avg_resolution_hours": 21.04,
+      "sla_breached_count": 90
+    },
+    {
+      "request_category": "Traffic & Transit",
+      "request_type_name": "Damaged Signage",
+      "priority_level": "Low",
+      "request_count": 429,
+      "avg_resolution_hours": 137.34,
+      "sla_breached_count": 86
+    },
+    {
+      "request_category": "Sanitation",
+      "request_type_name": "Illegal Dumping Cleanup",
+      "priority_level": "High",
+      "request_count": 427,
+      "avg_resolution_hours": 20.18,
+      "sla_breached_count": 84
+    },
+    {
+      "request_category": "Water & Utilities",
+      "request_type_name": "Storm Drain Clog",
+      "priority_level": "High",
+      "request_count": 422,
+      "avg_resolution_hours": 29.85,
+      "sla_breached_count": 76
+    },
+    {
+      "request_category": "Code Enforcement",
+      "request_type_name": "Overgrown Lot Hazard",
+      "priority_level": "Low",
+      "request_count": 415,
+      "avg_resolution_hours": 97.89,
+      "sla_breached_count": 72
+    },
+    {
+      "request_category": "Infrastructure",
+      "request_type_name": "Streetlight Outage",
+      "priority_level": "Medium",
+      "request_count": 414,
+      "avg_resolution_hours": 58.61,
+      "sla_breached_count": 78
+    },
+    {
+      "request_category": "Traffic & Transit",
+      "request_type_name": "Traffic Light Malfunction",
+      "priority_level": "Critical",
+      "request_count": 414,
+      "avg_resolution_hours": 4.97,
+      "sla_breached_count": 81
+    },
+    {
+      "request_category": "Infrastructure",
+      "request_type_name": "Pothole Repair",
+      "priority_level": "High",
+      "request_count": 413,
+      "avg_resolution_hours": 38.99,
+      "sla_breached_count": 79
+    },
+    {
+      "request_category": "Parks & Grounds",
+      "request_type_name": "Fallen Tree Branch",
+      "priority_level": "Critical",
+      "request_count": 413,
+      "avg_resolution_hours": 10.08,
+      "sla_breached_count": 79
+    },
+    {
+      "request_category": "Parks & Grounds",
+      "request_type_name": "Park Facility Damage",
+      "priority_level": "Medium",
+      "request_count": 413,
+      "avg_resolution_hours": 86.9,
+      "sla_breached_count": 91
+    },
+    {
+      "request_category": "Water & Utilities",
+      "request_type_name": "Water Main Leak",
+      "priority_level": "Critical",
+      "request_count": 402,
+      "avg_resolution_hours": 10.0,
+      "sla_breached_count": 74
+    },
+    {
+      "request_category": "Sanitation",
+      "request_type_name": "Missed Trash Pickup",
+      "priority_level": "Low",
+      "request_count": 401,
+      "avg_resolution_hours": 41.05,
+      "sla_breached_count": 82
+    }
+  ],
+  "backlog_aging": [
+    {
+      "department_name": "Parks & Recreation",
+      "total_backlog_tickets": 31,
+      "aging_0_to_3_days": 18,
+      "aging_4_to_7_days": 7,
+      "aging_8_to_14_days": 3,
+      "aging_over_14_days": 3
+    },
+    {
+      "department_name": "Public Safety",
+      "total_backlog_tickets": 31,
+      "aging_0_to_3_days": 18,
+      "aging_4_to_7_days": 7,
+      "aging_8_to_14_days": 3,
+      "aging_over_14_days": 3
+    },
+    {
+      "department_name": "Public Works",
+      "total_backlog_tickets": 73,
+      "aging_0_to_3_days": 43,
+      "aging_4_to_7_days": 18,
+      "aging_8_to_14_days": 7,
+      "aging_over_14_days": 5
+    },
+    {
+      "department_name": "Transportation",
+      "total_backlog_tickets": 35,
+      "aging_0_to_3_days": 21,
+      "aging_4_to_7_days": 8,
+      "aging_8_to_14_days": 3,
+      "aging_over_14_days": 3
+    },
+    {
+      "department_name": "Water & Utilities",
+      "total_backlog_tickets": 36,
+      "aging_0_to_3_days": 21,
+      "aging_4_to_7_days": 9,
+      "aging_8_to_14_days": 3,
+      "aging_over_14_days": 3
+    }
+  ]
+}
