@@ -44,11 +44,13 @@ def ingest_to_staging(df: pd.DataFrame, engine, dialect: str = "postgresql") -> 
         # SQLite
         table_name = "staging_raw_service_requests"
 
+    if_exists_mode = "append" if dialect == "postgresql" else "replace"
+
     df.to_sql(
         name=table_name,
         con=engine,
         schema=schema_name,
-        if_exists="replace",
+        if_exists=if_exists_mode,
         index=False
     )
     

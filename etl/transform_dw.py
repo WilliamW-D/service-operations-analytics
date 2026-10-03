@@ -42,7 +42,7 @@ def populate_date_dimension(conn, min_date_str: str, max_date_str: str, dialect:
     if dialect == "sqlite":
         table_name = "dw_dim_date"
         
-    df_date.to_sql(table_name, con=conn, schema=schema_name, if_exists="replace", index=False)
+    df_date.to_sql(table_name, con=conn, schema=schema_name, if_exists="append", index=False)
     print(f"  -> Generated {len(df_date)} date dimension rows in {table_name}")
 
 def run_dw_transformations(engine, dialect: str = "postgresql"):
