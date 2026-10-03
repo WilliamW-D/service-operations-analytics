@@ -11,8 +11,8 @@ from sqlalchemy import create_engine, text
 
 def populate_date_dimension(conn, min_date_str: str, max_date_str: str, dialect: str = "postgresql"):
     """Generate calendar dimension rows in dim_date for date range."""
-    min_date = pd.to_datetime(min_date_str).date() - pd.Timedelta(days=7)
-    max_date = pd.to_datetime(max_date_str).date() + pd.Timedelta(days=7)
+    min_date = pd.to_datetime(min_date_str).date() - pd.Timedelta(days=30)
+    max_date = pd.to_datetime(max_date_str).date() + pd.Timedelta(days=60)
     
     dates = pd.date_range(start=min_date, end=max_date)
     date_rows = []
@@ -58,7 +58,12 @@ def run_dw_transformations(engine, dialect: str = "postgresql"):
             conn.execute(text("TRUNCATE dw.dim_department CASCADE;"))
             conn.execute(text("TRUNCATE dw.dim_status CASCADE;"))
 
-            result = conn.execute(text(f"SELECT MIN(created_date)::text, MAX(created_date)::text FROM {staging_tbl};")).fetchone()
+            result = conn.execute(text(f"""
+                SELECT 
+                    MIN(LEAST(created_date, COALESCE(closed_date, created_date)))::text,
+                    MAX(GREATEST(created_date, COALESCE(closed_date, created_date)))::text
+                FROM {staging_tbl};
+            """)).fetchone()
             if result and result[0]:
                 populate_date_dimension(conn, result[0], result[1], dialect=dialect)
 
